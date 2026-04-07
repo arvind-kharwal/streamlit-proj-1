@@ -15,10 +15,8 @@ confusion_matrix = pd.DataFrame(
 )
 
 st.divider()
+
 st.table(confusion_matrix)
-
-
-
 df = pd.DataFrame(rng(0).standard_normal((60, 3)), columns=["a", "b", "c"])
 
 chart = (
