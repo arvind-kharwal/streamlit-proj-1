@@ -1,6 +1,8 @@
 import streamlit as st
-st.title("Department")
 import pandas as pd
+import altair as alt
+st.title("Department")
+from numpy.random import default_rng as rng
 
 confusion_matrix = pd.DataFrame(
     {
@@ -12,3 +14,15 @@ confusion_matrix = pd.DataFrame(
     index=["Actual Cat", "Actual Dog", "Actual Bird", "Actual Fish"],
 )
 st.table(confusion_matrix)
+
+
+
+df = pd.DataFrame(rng(0).standard_normal((60, 3)), columns=["a", "b", "c"])
+
+chart = (
+    alt.Chart(df)
+    .mark_circle()
+    .encode(x="a", y="b", size="c", color="c", tooltip=["a", "b", "c"])
+)
+
+st.altair_chart(chart)
