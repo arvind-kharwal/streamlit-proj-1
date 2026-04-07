@@ -13,6 +13,8 @@ confusion_matrix = pd.DataFrame(
     },
     index=["Actual Cat", "Actual Dog", "Actual Bird", "Actual Fish"],
 )
+
+st.divider()
 st.table(confusion_matrix)
 
 
